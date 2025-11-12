@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loan Eligibility Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="card" role="main">
+        <h1>Loan Eligibility Checker</h1>
+        <p class="lead">Quickly estimate if a user is eligible for a loan and approximate the EMI and maximum loan
+            amount.</p>
+
+
+        <form id="loanForm">
+            <div class="grid">
+                <div>
+                    <label for="age">Age</label>
+                    <input id="age" type="number" min="18" max="100" value="0" required>
+                </div>
+
+
+                <div>
+                    <label for="income">Monthly Income (₹)</label>
+                    <input id="income" type="number" min="0" value="0" required>
+                </div>
+
+
+                <div>
+                    <label for="existingEmi">Existing monthly EMI (₹)</label>
+                    <input id="existingEmi" type="number" min="0" value="0">
+                </div>
+
+
+                <div>
+                    <label for="creditScore">Credit score (300-900)</label>
+                    <input id="creditScore" type="number" min="300" max="900" value="0">
+                </div>
+
+
+                <div>
+                    <label for="loanAmount">Requested loan amount (₹)</label>
+                    <input id="loanAmount" type="number" min="0" value="0">
+                </div>
+
+
+                <div>
+                    <label for="tenure">Tenure (years)</label>
+                    <input id="tenure" type="number" min="1" max="30" value="0">
+                </div>
+
+
+                <div class="full">
+                    <label for="interest">Assumed Annual Interest Rate (%)</label>
+                    <input id="interest" type="number" min="0" step="0.1" value="0">
+                </div>
+            </div>
+
+
+            <div class="controls">
+                <button type="submit">Check Eligibility</button>
+                <button type="button" class="secondary" id="estimateMax">Estimate Max Loan</button>
+                <button type="button" class="secondary" id="resetBtn">Reset</button>
+            </div>
+        </form>
+
+
+        <div id="output" class="result" aria-live="polite" style="display:none"></div>
+
+
+        <small>Note: This is a simplified estimator for learning. Real banks use many more checks.</small>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
